@@ -1,0 +1,34 @@
+<html>
+<head>
+
+</head>
+<body>
+    <h1>分析完畢!</h1>
+    <!--<br/>-->
+    <!--<p>上传的图片是: {{ picture.photo.name }}</p>-->
+    <!--<br/>-->
+    <img src="{{ picture.photo.url }}", height="200", width="300" />
+    <br>
+
+    <br>
+        <p>[{{ picture.photo.name }}] 分析結果:</p>
+        <blockquote>
+            {% for i in results %}
+                <p>{{ i }}</p>
+            {% endfor %}
+        </blockquote>
+
+    <!--<a href="{% url 'index' %}">再来一次?</a>-->
+
+    <hr>
+    <!--以下 copied from index.html-->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>繼續上傳另一張震測圖: </p>
+        {{ form.as_p }}
+        <!--<input type="submit" value="Submit" />-->
+        <button type="submit">請石油王分析</button>
+
+    </form>
+</body>
+</html>

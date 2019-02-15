@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>石油探勘王 : 讓石油王幫你找到下半生的幸福！</title>
+</head>
+<body>
+    <p>石油探勘王在此!</p>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>先上傳一張震測圖吧: </p>
+        {{ form.as_p }}
+        <!--<input type="submit" value="Submit" />-->
+        <button type="submit">請石油王分析</button>
+
+    </form>
+</body>
+</html>
